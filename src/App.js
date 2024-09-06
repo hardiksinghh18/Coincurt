@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {BrowserRouter , Routes , Route} from 'react-router-dom'
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Footer from './components/Footer';
+import Exchange from './pages/Exchange';
+import LaunchPad from './pages/LaunchPad';
+import SecurityAudit from './pages/SecurityAudit';
+import MarketMaker from './pages/MarketMaker';
+import Aggregator from './pages/Aggregator';
+import Kols from './pages/Kols';
+import Press from './pages/Press';
+import Accelerator from './pages/Accelerator';
+import {exchangeData,dexData,launchpads,securityFirms,marketMakingFirms,kols,pressRelease,aggregator} from './store'
+import DetailsPage from './pages/DetailsPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+       <Navbar/>
+       <Routes>
+           	                     
+            <Route path="/" element={<Home  exchangeData={exchangeData}/>} />
+            <Route path="/exchange" element={<Exchange exchangeData={exchangeData} dexData={dexData} />} />
+            <Route path="/launchpad" element={<LaunchPad launchpads={launchpads}  />} />
+            <Route path="/securityaudit" element={<SecurityAudit securityFirms={securityFirms} />} />
+            <Route path="/marketmaker" element={<MarketMaker marketMakingFirms={marketMakingFirms} />} />
+            <Route path="/aggregatorplatform" element={<Aggregator aggregator={aggregator} />} />
+            <Route path="/kols" element={<Kols kols={kols} />} />
+            <Route path="/pressrelease" element={<Press pressRelease={pressRelease} />} />
+            <Route path="/accelerator" element={<Accelerator />} />
+            <Route path="/:type/:name" element={<DetailsPage />} />
+
+          </Routes>
+      <Footer/>
+
+    </BrowserRouter>
   );
 }
 
