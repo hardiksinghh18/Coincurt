@@ -14,6 +14,7 @@ import Press from './pages/Press';
 import Accelerator from './pages/Accelerator';
 import {exchangeData,dexData,launchpads,securityFirms,marketMakingFirms,kols,pressRelease,aggregator} from './store'
 import DetailsPage from './pages/DetailsPage';
+import Grant from './pages/Grant';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/kols" element={<Kols kols={kols} />} />
             <Route path="/pressrelease" element={<Press pressRelease={pressRelease} />} />
             <Route path="/accelerator" element={<Accelerator />} />
+            <Route path="/grant" element={<Grant />} />
             <Route path="/:type/:name" element={<DetailsPage />} />
 
           </Routes>

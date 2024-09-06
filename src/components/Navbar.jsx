@@ -2,15 +2,26 @@ import React, { useState } from 'react';
 import logo from '../images/coincurtLogo.png';
 import { NavLink } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi'; // Icons for menu and close
+import { FiChevronDown } from 'react-icons/fi'; // Icon for dropdown
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // For toggling the mobile menu
+  const [isHovered, setIsHovered] = useState(false); // For hovering on Grant
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const activeClassName = 'text-blue-500 md:max-w-16 font-semibold'; // Customize this class as needed
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const activeClassName = 'text-orange-500  flex font-semibold'; // Customize this class as needed
 
   return (
     <nav className="bg-white shadow-md p-4">
@@ -21,7 +32,7 @@ const Navbar = () => {
             <img src={logo} alt="Logo" className="w-14 h-12 bg-cover inline-block mr-2" />
           </NavLink>
           {/* Desktop Links */}
-          <div className="hidden md:flex space-x-8 text-sm font-semibold ">
+          <div className="hidden md:flex space-x-6 text-sm font-semibold ">
             <NavLink
               to={'/exchange'}
               className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
@@ -36,21 +47,21 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to={'/securityaudit'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black md:max-w-16 hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
             >
               Security Audit
             </NavLink>
             <NavLink
               to={'/marketmaker'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black md:max-w-16 hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
             >
               Market Makers
             </NavLink>
             <NavLink
               to={'/aggregatorplatform'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black md:max-w-16 hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
             >
-              Aggregator Platforms
+              Indexer
             </NavLink>
             <NavLink
               to={'/kols'}
@@ -60,16 +71,48 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to={'/pressrelease'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black md:max-w-16 hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
             >
               Press Release
             </NavLink>
-            <NavLink
-              to={'/accelerator'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black md:max-w-16 hover:text-gray-600')}
+
+            {/* Grant with Dropdown */}
+            <div
+              className="relative hover:cursor-pointer"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
-              Accelerator & Grants
-            </NavLink>
+              <div
+                className={({ isActive }) => (isActive ? activeClassName : 'text-black  hover:text-gray-600 flex  ')}
+              >
+                Investment 
+              </div>
+              
+              {/* Dropdown Menu */}
+              {isHovered && (
+                <div className="absolute left-0 mt-0 w-40 bg-white border-gray-50 rounded-md shadow-lg z-10">
+                  <ul className="py-1 text-sm text-gray-700">
+                    <li>
+                      <NavLink
+                        to={'/accelerator'}
+                        className="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        Accelerator 
+
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to={'/grant'}
+                        className="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        Grant
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -82,9 +125,7 @@ const Navbar = () => {
               placeholder="Search"
             />
           </div>
-          <a href="/" className="hidden md:inline-block bg-blue-500 text-white font-semibold py-2 px-4 text-sm rounded-lg hover:bg-blue-700 transition">
-            Sign in
-          </a>
+
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button onClick={toggleMenu} className="focus:outline-none">
@@ -159,9 +200,6 @@ const Navbar = () => {
               className="rounded-full pl-3 pr-10 py-1 bg-gray-100 text-black focus:outline-none mt-2"
               placeholder="Search"
             />
-            <a href="/" className="bg-blue-500 text-white font-semibold py-2 px-4 text-sm rounded-lg hover:bg-blue-700 transition">
-              Sign in
-            </a>
           </div>
         </div>
       )}

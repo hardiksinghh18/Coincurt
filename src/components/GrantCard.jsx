@@ -7,7 +7,7 @@ const GrantCard = ({logo,name}) => {
       <img src={logo} alt={`${name} Logo`} className="w-12 h-12 rounded-full" />
       <span className="text-md font-medium text-gray-900">{name}</span>
     </div>
-    <button className="bg-blue-500 hover:bg-blue-600 text-xs text-white font-bold py-2 px-4 rounded-full">
+    <button className="bg-orange-500 hover:bg-orange-600 text-xs text-white font-bold py-2 px-4 rounded-full">
       Apply
     </button>
   </div>
