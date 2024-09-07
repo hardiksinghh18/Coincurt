@@ -21,10 +21,10 @@ const Navbar = () => {
     setIsHovered(false);
   };
 
-  const activeClassName = 'text-orange-500  flex font-semibold'; // Customize this class as needed
+  const activeClassName = 'text-[#27f7ab]  flex font-semibold'; // Customize this class as needed
 
   return (
-    <nav className="bg-white shadow-md p-4 mb-8 z-20">
+    <nav className="bg-[#010409] text-white shadow-md p-4 mb-4 z-20">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-6 ">
@@ -35,43 +35,43 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-6 text-sm font-semibold ">
             <NavLink
               to={'/exchange'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
             >
               Exchange
             </NavLink>
             <NavLink
               to={'/launchpad'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
             >
               Launchpad
             </NavLink>
             <NavLink
               to={'/securityaudit'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
             >
               Security Audit
             </NavLink>
             <NavLink
               to={'/marketmaker'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
             >
-              Market Makers
+              Market Maker
             </NavLink>
             <NavLink
-              to={'/aggregatorplatform'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              to={'/indexer'}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
             >
               Indexer
             </NavLink>
             <NavLink
               to={'/kols'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
             >
               KOLs
             </NavLink>
             <NavLink
               to={'/pressrelease'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
             >
               Press Release
             </NavLink>
@@ -86,7 +86,7 @@ const Navbar = () => {
 
               <p
 
-                className="inline-flex justify-between items-center w-30     font-semibold text-gray-700 bg-white hover:bg-gray-50 "
+                className="inline-flex justify-between items-center w-30     font-semibold text-white bg-transparent  "
               >
                 Fundraising
                 <FiChevronDown className="ml-2 h-5 w-5" />
@@ -95,12 +95,12 @@ const Navbar = () => {
 
               {/* Dropdown Menu */}
               {isHovered && (
-                <div className="absolute left-0 mt-0 w-40 bg-white border-gray-50 rounded-md shadow-lg z-10">
-                  <ul className="py-1 text-sm text-gray-700">
+                <div className="absolute left-0 mt-0 w-40 bg-[#161a21] border-gray-50 rounded-md shadow-lg z-10">
+                  <ul className="py-0 text-sm text-white">
                     <li>
                       <NavLink
                         to={'/accelerator'}
-                        className="block px-4 py-2 hover:bg-gray-100"
+                        className="block px-4 py-2 hover:bg-black"
                       >
                         Accelerator
 
@@ -109,7 +109,7 @@ const Navbar = () => {
                     <li>
                       <NavLink
                         to={'/grant'}
-                        className="block px-4 py-2 hover:bg-gray-100"
+                        className="block px-4 py-2 hover:bg-black"
                       >
                         Grant
                       </NavLink>
@@ -126,7 +126,7 @@ const Navbar = () => {
           <div className="hidden md:block relative">
             <input
               type="text"
-              className="rounded-full pl-3 pr-10 py-1 bg-gray-100 text-black focus:outline-none"
+              className="rounded-full pl-6 pr-10 py-1 bg-gray-800 text-white  focus:outline-none"
               placeholder="Search"
             />
           </div>
@@ -146,49 +146,49 @@ const Navbar = () => {
           <div className="flex flex-col items-center space-y-6 text-sm font-semibold">
             <NavLink
               to={'/exchange'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
               onClick={toggleMenu}
             >
               Exchange
             </NavLink>
             <NavLink
               to={'/launchpad'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
               onClick={toggleMenu}
             >
               Launchpad
             </NavLink>
             <NavLink
               to={'/securityaudit'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
               onClick={toggleMenu}
             >
               Security Audit
             </NavLink>
             <NavLink
               to={'/marketmaker'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
               onClick={toggleMenu}
             >
               Market Maker
             </NavLink>
             <NavLink
               to={'/aggregatorplatform'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
               onClick={toggleMenu}
             >
               Indexer
             </NavLink>
             <NavLink
               to={'/kols'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
               onClick={toggleMenu}
             >
               KOLs
             </NavLink>
             <NavLink
               to={'/pressrelease'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
+              className={({ isActive }) => (isActive ? activeClassName : 'text-white  hover:text-green-200')}
               onClick={toggleMenu}
             >
               Press Release
@@ -236,7 +236,7 @@ const Navbar = () => {
             </div>
             <input
               type="text"
-              className="rounded-full pl-5 pr-10 py-3 bg-gray-100 text-black focus:outline-none mt-2"
+              className="rounded-full pl-5 pr-10 py-3 bg-gray-100 text-white  focus:outline-none mt-2"
               placeholder="Search"
             />
           </div>

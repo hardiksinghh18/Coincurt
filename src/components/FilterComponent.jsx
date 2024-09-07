@@ -17,7 +17,7 @@ const Dropdown = ({ options, label }) => {
       {/* Dropdown Button */}
       <button
         onClick={toggleDropdown}
-        className="inline-flex justify-between items-center w-40 px-4 my-2 py-2 border border-gray-300 shadow-sm text-xs font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none    rounded-md"
+        className="inline-flex justify-between items-center w-40 px-4 my-2 py-2 border border-gray-300 shadow-sm text-xs font-medium text-white bg-[#161a21] focus:outline-none    rounded-md"
       >
         {selectedOption}
         <FiChevronDown className="ml-2 h-5 w-5" />
@@ -25,13 +25,13 @@ const Dropdown = ({ options, label }) => {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="origin-top-left absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
-          <div className="py-1">
+        <div className="origin-top-left absolute mt-2 w-40 rounded-md shadow-lg bg-[#161a21] text-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+          <div className="py-0">
             {options.map((option) => (
               <div
                 key={option}
                 onClick={() => handleOptionClick(option)}
-                className="text-gray-700 block px-4 py-2 text-xs cursor-pointer hover:bg-gray-100"
+                className=" block px-4 py-2 text-xs cursor-pointer text-white hover:bg-black"
               >
                 {option}
               </div>

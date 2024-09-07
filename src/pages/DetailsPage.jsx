@@ -1,10 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import {exchangeData,dexData,launchpads,securityFirms,marketMakingFirms,kols,pressRelease,aggregator} from '../store';
+import { exchangeData, dexData, launchpads, securityFirms, marketMakingFirms, kols, pressRelease, aggregator } from '../store';
 import { FaTwitter } from 'react-icons/fa';
 
 const DetailsPage = () => {
-  const {type,name} = useParams();
+  const { type, name } = useParams();
 
   // Function to match category based on the type parameter
   const getCategoryData = (type) => {
@@ -41,68 +41,77 @@ const DetailsPage = () => {
   }
 
   return (
-    <div className="bg-white px-8 md:px-16 pb-8 rounded-lg shadow-md max-w-4xl mx-auto mt-8 md:mt-16">
+    <div className="bg-[#161a21] text-white px-8 md:px-16 pb-8 rounded-lg shadow-md max-w-4xl mx-auto mt-4 ">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row items-start space-y-4 md:space-x-4">
-        {/* Logo Placeholder */}
-        {/* <img
-          src="https://via.placeholder.com/64"
-          alt={`${details.name} Logo`}
-          className="w-16 h-16 rounded-full"
-        /> */}
+      <div className="flex flex-col md:flex-row items-start space-y-4 ">
+
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 my-4 md:my-8">{details.name}</h1>
-          <p className="text-gray-600">{details.introduction}</p>
+          <div className='flex items-center gap-8'>
+            <img src={details.name} alt={`${details.name} Logo`} className="w-8 h-8 rounded-full text-xs overflow-hidden" />
+            <h1 className="text-2xl md:text-3xl font-bold text-white my-4 md:my-8">{details.name}</h1>
+
+          </div>
+
+          {/* Links Section */}
+          <div className="flex space-x-2 mt-2">
+            <a
+              href={details.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1 bg-black text-white rounded-full hover:bg-black text-xs md:text-sm"
+            >
+              {details.website ? "Visit Website" : "Website"}
+            </a>
+            <a
+              href="/"
+              className="px-2 py-1 flex items-center bg-black text-white rounded-full hover:bg-black text-xs md:text-sm"
+            >
+              <FaTwitter />
+            </a>
+          </div>
+
+          {/* Details Section */}
+          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3 text-sm">
+            <div className="bg-black text-white px-4 py-2 w-fit rounded-lg flex gap-2">
+              <h2 className=" font-medium">Category:</h2>
+              <p className="">{details.category}</p>
+            </div>
+            <div className="bg-black text-white  px-4 py-2 w-fit rounded-lg flex gap-2">
+              <h2 className=" font-medium">Trust Rating:</h2>
+              <p className="">{details.trustRating}</p>
+            </div>
+            {details.serviceFee ? (<div className="bg-black text-white  px-4 py-2 w-fit rounded-lg flex gap-2 col-span-1">
+              <h2 className=" font-medium">Service Fee:</h2>
+              <p className="">{details.serviceFee}</p>
+            </div>) : ''}
+
+            {details.listingFee ? (<div className="bg-black text-white  px-4 py-2 w-fit rounded-lg flex gap-2 col-span-1">
+              <h2 className=" font-medium">Listing Fee:</h2>
+              <p className="">{details.listingFee}</p>
+            </div>) : ''}
+            {details.auditFee ? (<div className="bg-black text-white  px-4 py-2 w-fit rounded-lg flex gap-2 col-span-1">
+              <h2 className=" font-medium">Audit Fee:</h2>
+              <p className="">{details.auditFee}</p>
+            </div>) : ''}
+            {details.fee ? (<div className="bg-black text-white  px-4 py-2 w-fit rounded-lg flex gap-2 col-span-1">
+              <h2 className=" font-medium">Fee:</h2>
+              <p className="">{details.fee}</p>
+            </div>) : ''}
+
+          </div>
         </div>
       </div>
-
-      {/* Links Section */}
-      <div className="flex space-x-2 mt-4">
-        <a
-          href={details.website}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 text-xs md:text-sm"
-        >
-          {details.website ? "Visit Website" : "Website"}
-        </a>
-        <a
-          href="/"
-          className="px-3 py-1 flex items-center bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 text-xs md:text-sm"
-        >
-          <FaTwitter />
-        </a>
+      <div className='py-8'>
+        <p className="text-white">{details.introduction}</p>
       </div>
 
-      {/* Details Section */}
-      <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 text-sm">
-        <div className="bg-gray-100 px-4 py-2 w-fit rounded-lg flex gap-2">
-          <h2 className="text-gray-900 font-medium">Category:</h2>
-          <p className="text-gray-600">{details.category}</p>
-        </div>
-        <div className="bg-gray-100 px-4 py-2 w-fit rounded-lg flex gap-2">
-          <h2 className="text-gray-900 font-medium">Trust Rating:</h2>
-          <p className="text-gray-600">{details.trustRating}</p>
-        </div>
-       {details.serviceFee?( <div className="bg-gray-100 px-4 py-2 w-fit rounded-lg flex gap-2 col-span-1">
-          <h2 className="text-gray-900 font-medium">Service Fee:</h2>
-          <p className="text-gray-600">{details.serviceFee}</p>
-        </div>):''}
+      <button className=" text-[#27f7ab] border border-[#27f7ab] font-semibold py-2 px-6 mt-0 rounded-lg hover:bg-[#27f7ab] hover:text-black transition"
+      >
+        Consulting
+      </button>
 
-        {details.listingFee ? ( <div className="bg-gray-100 px-4 py-2 w-fit rounded-lg flex gap-2 col-span-1">
-          <h2 className="text-gray-900 font-medium">Listing Fee:</h2>
-          <p className="text-gray-600">{details.listingFee}</p>
-        </div>) : ''}
-        {details.auditFee ? ( <div className="bg-gray-100 px-4 py-2 w-fit rounded-lg flex gap-2 col-span-1">
-          <h2 className="text-gray-900 font-medium">Audit Fee:</h2>
-          <p className="text-gray-600">{details.auditFee}</p>
-        </div>) : ''}
-        {details.fee ? ( <div className="bg-gray-100 px-4 py-2 w-fit rounded-lg flex gap-2 col-span-1">
-          <h2 className="text-gray-900 font-medium">Fee:</h2>
-          <p className="text-gray-600">{details.fee}</p>
-        </div>) : ''}
-    
-      </div>
+
+
     </div>
   );
 };
