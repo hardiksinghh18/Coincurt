@@ -24,7 +24,7 @@ const Navbar = () => {
   const activeClassName = 'text-orange-500  flex font-semibold'; // Customize this class as needed
 
   return (
-    <nav className="bg-white shadow-md p-4">
+    <nav className="bg-white shadow-md p-4 mb-8 z-20">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-6 ">

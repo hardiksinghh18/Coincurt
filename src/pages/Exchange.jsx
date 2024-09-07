@@ -6,7 +6,7 @@ const Exchange = ({ exchangeData, dexData }) => {
   return (
     <div className='px-2'>
       <div>
-        <div className='flex flex-col  md:flex-row w-full justify-between items-center px-8 mt-8'>
+        <div className='flex flex-col  md:flex-row w-full justify-between items-center mt-8'>
           <h2 className='text-3xl font-bold my-2 '>Centralised Exchanges</h2>
           <FilterComponent />
         </div>
