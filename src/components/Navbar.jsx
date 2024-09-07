@@ -142,7 +142,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white mt-4 pb-8">
+        <div className="md:hidden bg-[#010409] text-white mt-4 pb-8">
           <div className="flex flex-col items-center space-y-6 text-sm font-semibold">
             <NavLink
               to={'/exchange'}
@@ -202,7 +202,7 @@ const Navbar = () => {
 
               <p
 
-                className="inline-flex justify-between items-center w-30     font-semibold text-gray-700 bg-white hover:bg-gray-50 "
+                className="inline-flex justify-between items-center w-30     font-semibold text-white bg-transparent  "
               >
                 Fundraising
                 <FiChevronDown className="ml-2 h-5 w-5" />
@@ -211,12 +211,12 @@ const Navbar = () => {
 
               {/* Dropdown Menu */}
               {isHovered && (
-                <div className="absolute left-0 mt-0 w-40 bg-white border-gray-50 rounded-md shadow-lg z-10">
-                  <ul className="py-1 text-sm text-gray-700">
+                <div className="absolute left-0 mt-0 w-40 bg-[#161a21] border-gray-50 rounded-md shadow-lg z-10">
+                  <ul className="py-0 text-sm text-white">
                     <li>
                       <NavLink
                         to={'/accelerator'}
-                        className="block px-4 py-2 hover:bg-gray-100"
+                        className="block px-4 py-2 hover:bg-black"
                       >
                         Accelerator
 
@@ -225,7 +225,7 @@ const Navbar = () => {
                     <li>
                       <NavLink
                         to={'/grant'}
-                        className="block px-4 py-2 hover:bg-gray-100"
+                        className="block px-4 py-2 hover:bg-black"
                       >
                         Grant
                       </NavLink>
@@ -236,7 +236,7 @@ const Navbar = () => {
             </div>
             <input
               type="text"
-              className="rounded-full pl-5 pr-10 py-3 bg-gray-100 text-white  focus:outline-none mt-2"
+              className="rounded-full pl-5 pr-10 py-3 bg-gray-900 text-white  focus:outline-none mt-2"
               placeholder="Search"
             />
           </div>

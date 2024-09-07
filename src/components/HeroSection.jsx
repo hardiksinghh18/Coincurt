@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <div className="text-white  flex flex-col items-center justify-center text-center">
       {/* Header Text */}
-      <h1 className="text-4xl font-bold text-white mb-4 px-4">A Web3.0 Consulting & Resource Platform</h1>
+      <h1 className="text-2xl md:text-4xl font-bold text-white mb-4 px-4">A Web3.0 Consulting & Resource Platform</h1>
       {/* <h2 className="text-5xl font-bold text-blue-500 mb-6">Coincurt</h2> */}
 
       {/* Line below heading */}

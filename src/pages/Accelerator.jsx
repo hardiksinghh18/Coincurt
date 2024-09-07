@@ -20,8 +20,8 @@ const Accelerator = () => {
 
   return (
     <div className='px-8'>
-      <h2 className='text-3xl font-bold px-8 mt-8 mb-6'>Accelerator</h2>
-      <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <h2 className='text-3xl font-bold px-8 md:mt-8 mb-6'>Accelerator</h2>
+      <div className="md:p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         {acceleratorData.map((ele) => (
           <GrantCard key={ele.id} logo={ele.logo} name={ele.name} />
         ))}
