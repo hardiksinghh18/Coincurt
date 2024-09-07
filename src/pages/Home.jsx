@@ -9,7 +9,7 @@ const Home = ({ exchangeData }) => {
     < >
       <HeroSection />
       <div  className='px-2'>
-        <h2 className='ml-8 text-3xl font-bold'>Exchanges</h2>
+        <h2 className='px-8 text-3xl font-bold'>Exchanges</h2>
         <CardSection data={exchangeData.slice(0, 4)} type={'exchange'} />
       </div>
 

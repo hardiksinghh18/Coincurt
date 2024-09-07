@@ -1,16 +1,19 @@
 import React from 'react'
 import { NavLink, useParams } from 'react-router-dom'
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Card = ({ name, introduction, exchangeType, category, trustRating, listingFee, serviceFee, auditFee, fee,type }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 border-gray-300 border-[1px] min-w-64 h-[25rem] flex flex-col justify-between">
-      <div className="flex items-center mb-4">
+      <div className="flex justify-between items-center mb-4">
         {/* <img src={logo} alt={`${title} logo`} className="w-10 h-10 rounded-full" /> */}
         <h2 className=" text-lg font-bold text-gray-800">{name}</h2>
         {/* <span className="ml-2 text-orange-400 font-bold">NEW</span> */}
+        <NavLink to={`/${type}/${name}`} className='text-sm font-semibold text-orange-600'><FaExternalLinkAlt/></NavLink>
+
       </div>
-      <p className="text-gray-500 mb-4 text-sm">{introduction.substring(0, 110)}<NavLink to={`/${type}/${name}`} className='text-sm font-semibold text-orange-600'>... Read more</NavLink></p>
+      <p className="text-gray-500 mb-4 text-sm">{introduction.substring(0, 130)}...</p>
       <div className="text-sm  mb-4 flex w-full justify-between ">
         {exchangeType ? (<div className=' w-[50%] space-y-1' ><p className='text-gray-400'>Exchange Type</p> <p className='font-semibold'>{exchangeType ? exchangeType : '--'}</p></div>) : ''}
         <div className=' w-[50%] space-y-1'><p className='text-gray-400 '>Category</p><p className='font-semibold'> {category ? category : '--'}</p></div>

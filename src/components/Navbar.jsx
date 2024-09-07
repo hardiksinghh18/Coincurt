@@ -82,12 +82,17 @@ const Navbar = () => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <div
-                className={({ isActive }) => (isActive ? activeClassName : 'text-black  hover:text-gray-600 flex  ')}
+
+
+              <p
+
+                className="inline-flex justify-between items-center w-30     font-semibold text-gray-700 bg-white hover:bg-gray-50 "
               >
-                Investment 
-              </div>
-              
+                Fundraising
+                <FiChevronDown className="ml-2 h-5 w-5" />
+              </p>
+
+
               {/* Dropdown Menu */}
               {isHovered && (
                 <div className="absolute left-0 mt-0 w-40 bg-white border-gray-50 rounded-md shadow-lg z-10">
@@ -97,7 +102,7 @@ const Navbar = () => {
                         to={'/accelerator'}
                         className="block px-4 py-2 hover:bg-gray-100"
                       >
-                        Accelerator 
+                        Accelerator
 
                       </NavLink>
                     </li>
@@ -137,8 +142,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-md mt-4 pb-8">
-          <div className="flex flex-col items-center space-y-4 text-xs font-semibold">
+        <div className="md:hidden bg-white mt-4 pb-8">
+          <div className="flex flex-col items-center space-y-6 text-sm font-semibold">
             <NavLink
               to={'/exchange'}
               className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
@@ -172,7 +177,7 @@ const Navbar = () => {
               className={({ isActive }) => (isActive ? activeClassName : 'text-black hover:text-gray-600')}
               onClick={toggleMenu}
             >
-              Aggregator Platform
+              Indexer
             </NavLink>
             <NavLink
               to={'/kols'}
@@ -188,16 +193,50 @@ const Navbar = () => {
             >
               Press Release
             </NavLink>
-            <NavLink
-              to={'/accelerator'}
-              className={({ isActive }) => (isActive ? activeClassName : 'text-black  hover:text-gray-600')}
-              onClick={toggleMenu}
+            <div
+              className="relative hover:cursor-pointer"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
-              Accelerator & Grants
-            </NavLink>
+
+
+              <p
+
+                className="inline-flex justify-between items-center w-30     font-semibold text-gray-700 bg-white hover:bg-gray-50 "
+              >
+                Fundraising
+                <FiChevronDown className="ml-2 h-5 w-5" />
+              </p>
+
+
+              {/* Dropdown Menu */}
+              {isHovered && (
+                <div className="absolute left-0 mt-0 w-40 bg-white border-gray-50 rounded-md shadow-lg z-10">
+                  <ul className="py-1 text-sm text-gray-700">
+                    <li>
+                      <NavLink
+                        to={'/accelerator'}
+                        className="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        Accelerator
+
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to={'/grant'}
+                        className="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        Grant
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
             <input
               type="text"
-              className="rounded-full pl-3 pr-10 py-1 bg-gray-100 text-black focus:outline-none mt-2"
+              className="rounded-full pl-5 pr-10 py-3 bg-gray-100 text-black focus:outline-none mt-2"
               placeholder="Search"
             />
           </div>

@@ -6,8 +6,8 @@ const Exchange = ({ exchangeData, dexData }) => {
   return (
     <div className='px-2'>
       <div>
-        <div className='flex w-full justify-between items-center pr-8 mt-8'>
-          <h2 className='text-3xl font-bold ml-10 '>Centralised Exchanges</h2>
+        <div className='flex flex-col  md:flex-row w-full justify-between items-center px-8 mt-8'>
+          <h2 className='text-3xl font-bold my-2 '>Centralised Exchanges</h2>
           <FilterComponent />
         </div>
         <CardSection data={exchangeData.slice(0, 8)} type={'exchange'} />

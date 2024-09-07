@@ -28,7 +28,7 @@ const Grant = () => {
   
   return (
  <div className='px-2'>
- <h2 className='text-3xl font-bold mx-8 mt-8 mb-6'>Grant</h2>
+ <h2 className='text-3xl font-bold px-8 mt-8 mb-6'>Grant</h2>
 <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
     {grantsData.map((grant) => (
       <GrantCard key={grant.id} logo={grant.logo} name={grant.name} />

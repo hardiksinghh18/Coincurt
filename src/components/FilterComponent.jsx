@@ -17,7 +17,7 @@ const Dropdown = ({ options, label }) => {
       {/* Dropdown Button */}
       <button
         onClick={toggleDropdown}
-        className="inline-flex justify-between items-center w-40 px-4 py-2 border border-gray-300 shadow-sm text-xs font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none    rounded-md"
+        className="inline-flex justify-between items-center w-40 px-4 my-2 py-2 border border-gray-300 shadow-sm text-xs font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none    rounded-md"
       >
         {selectedOption}
         <FiChevronDown className="ml-2 h-5 w-5" />
@@ -45,24 +45,24 @@ const Dropdown = ({ options, label }) => {
 
 const FilterComponent = () => {
   return (
-    <div className="flex space-x-4">
-      {/* Token Issuance Dropdown */}
-                           
-      <Dropdown
-        label="Exchange_Type"
-        options={['CEX', 'DEX']}
-      />
-      {/* Deal Type Dropdown */}
-      <Dropdown
-        label="Category"
-        options={['Tier 1', 'Tier 2', 'Tier 3','Tier 4','Tier 5']}
-      />
-      {/* Amount Range Dropdown */}
-      <Dropdown
-        label=" Fee Range"
-        options={['$0-$50k', '$50k - $100k', '$100k - $500k']}
-      />
-    </div>
+<div className="flex flex-wrap justify-center my-2 text-center md:my-0 space-x-2  md:space-x-4">
+  {/* Token Issuance Dropdown */}
+  <Dropdown
+    label="Exchange_Type"
+    options={['All','CEX', 'DEX']}
+  />
+  {/* Deal Type Dropdown */}
+  <Dropdown
+    label="Category"
+    options={['All','Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5']}
+  />
+  {/* Amount Range Dropdown */}
+  <Dropdown
+    label="Fee Range"
+    options={['All','$0-$50k', '$50k - $100k', '$100k - $500k']}
+  />
+</div>
+
   );
 };
 
