@@ -8,7 +8,7 @@ const Card = ({ name, introduction, exchangeType, category, trustRating, listing
     <div className="bg-[#161a21] text-white rounded-lg shadow-lg p-6 border-gray-800 border-[1px] min-w-64 h-[25rem] flex flex-col justify-between">
       <div className="flex justify-between items-center mb-4">
         <div className='flex gap-2 items-center'>
-        <img src='' alt={`${name} logo`} className="w-6 h-6 rounded-full" />
+        <img src='' alt={`${name} logo`} className="w-6 h-6 rounded-full overflow-hidden" />
         <h2 className=" text-lg font-bold text-white">{name}</h2>
         </div>
         {/* <span className="ml-2 text-blue-400 font-bold">NEW</span> */}

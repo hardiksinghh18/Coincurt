@@ -9,9 +9,9 @@ const Footer = () => {
     <footer className="bg-[#161a21] p-8 md:p-16 mt-16">
       <div className="container mx-auto flex flex-row flex-wrap justify-between items-start space-y-8 md:space-y-0">
         {/* Left Section */}
-        <div className='w-[35%]'>
+        <div className=' md:w-[35%] flex justify-center  items-center '>
          <img className='h24 w-24' src={logo} alt="" />
-          <p className="text-white text-xs font-semibold mt-2">
+          <p className="text-white text-xs font-semibold mt-2 ml-8">
             A Reliable Crypto Asset Data Platform, Committed to Making Crypto Investing Easier.
           </p>
           <div className="flex space-x-4 mt-4">
